@@ -24,7 +24,7 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 ~~~html
 <?php
 	print 'Hola';
-	echo 'Hola', 'Hola de nuevo';
+	echo  'Hola', 'Hola de nuevo';
 ?>
 ~~~
 
@@ -59,7 +59,15 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 ?>
 ~~~
 
-## OPERADORES
+## ARRAYS
+~~~html
+<?php
+	$cars = array("Volvo", "BMW", "Toyota");
+	echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+?>
+~~~
+
+## OPERADORES DE COMPARACIÓN
 ~~~html
 ==	Igual			$x == $y 
 ===	Identico		$x === $y 
@@ -70,6 +78,14 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 <	Menor que		$x < $y
 >=	Mayor igual		$x >= $y
 <=	Menor Igual 	$x <= $y
+~~~
+
+## OPERADORES DE INCREMENTO Y DECREMENTO
+~~~html
+++$x	Pre-incrementa
+$x++	Post-incrementa
+--$x	Pre-decrementa
+$x--	Post-decrementa
 ~~~
 
 ## CONCATENAR VARIABLES
