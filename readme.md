@@ -25,16 +25,64 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 <?php
 	print 'Hola';
 	echo 'Hola', 'Hola de nuevo';
-	var_dump(expression);
 ?>
+~~~
+
+## VARIABLES TIPO CADENAS O STRING
+~~~html
+<?php
+	$nombre 	= 'Roberto';
+	$apellido   = 'Rojas';
+	echo "$nombre, $apellido"; // imprime "Roberto, Rojas"
+
+	$4nombre    = 'aun no';   // inválido; comienza con un número
+	$_4nombre   = 'aun no';  // válido; comienza con un carácter de subrayado
+?>
+~~~
+
+## VARIABLES TIPO NUMEROS INT
+~~~html
+<?php
+	$x = 5985;
+	var_dump(is_int($x));//Imprime bool(true)
+	echo '</br>';
+	$x = 59.85;//Imprime bool(false)
+	var_dump(is_int($x));
+?>
+~~~
+
+## VARIABLES TIPO NUMEROS FLOAT
+~~~html
+<?php
+	$x = 10.365;
+	var_dump(is_float($x));
+?>
+~~~
+
+## OPERADORES
+~~~html
+==	Igual			$x == $y 
+===	Identico		$x === $y 
+!=	Distinto		$x != $y
+<>	Distinto  		$x <> $y
+!==	No es identico	$x !== $y
+>	Mayor que		$x > $y
+<	Menor que		$x < $y
+>=	Mayor igual		$x >= $y
+<=	Menor Igual 	$x <= $y
 ~~~
 
 ## CONCATENAR VARIABLES
 ~~~html
-<?php '<h1>'.$datos.'</h1>'; ?>
+<?php 
+	$numeroUno = 18;
+	$numeroDos = ' de Septiembre'
+	echo '<h1>'.$numeroUno.$numeroDos.'</h1>';
+?>
 ~~~
 
 ## ESTRUCTURA DE CONTROL MÁS UTILIZADAS EN WORDPRESS
+
 ### Condicional IF
 ~~~html
 <?php
@@ -46,7 +94,7 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 ?>
 ~~~
 
-## BUCLE WHILE
+### Bucle o Loop While
 ~~~html
 <?php
 	$a = 0;
@@ -56,6 +104,16 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 	}
 ?>
 ~~~
+
+### Bucle o Loop For
+~~~html
+<?php  
+	for ($x = 0; $x <= 10; $x++) {
+	  echo "The number is: $x <br>";
+	}
+?> 
+~~~
+
 
 # INICIO DE UN THEME BASICO
 
