@@ -61,7 +61,7 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 
 Descargar la plantilla del siguiente enlace:
 
-[a link](https://drive.google.com/file/d/1UXLah6ijtf2zys-NtgUpkCELisH6xth4/view?usp=sharing)
+[Bajar Themes themes-01-html5-Rocks](https://drive.google.com/file/d/1UXLah6ijtf2zys-NtgUpkCELisH6xth4/view?usp=sharing)
 
 ### Para crear un Theme desde cero, se necesita minimo:
 ~~~
