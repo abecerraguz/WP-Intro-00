@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/*
+Theme Name: Themes HTML5-ROCKS
+Theme URI: https://wordpress.org/themes/HTML5-ROCKS/
+Author: Alumnos de Producción Web Mobile
+Author URI: https://wordpress.org/
+Description: 2019 Sitio de entrenamiento para el desarrollo de un Themes
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: html5-rocks
+Tags: one-column, flexible-header, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, rtl-language-support, sticky-post, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Twenty Nineteen is based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+@import url('css/normalize.css');
+@import url('css/all.css');
+@import url('css/main.css');
