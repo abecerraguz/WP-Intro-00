@@ -62,9 +62,31 @@ PHP (acrónimo recursivo de PHP: Hypertext Preprocessor) es un lenguaje de códi
 ## ARRAYS
 ~~~html
 <?php
+	// Array Indexado el orden es a través del indice.
 	$cars = array("Volvo", "BMW", "Toyota");
-	echo "I like " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+	echo "Me gusta el " . $cars[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
 ?>
+
+<?php
+	// Array Asociativo, están ordenados en vase a una llave y el valor asociado a la llave.
+	$color = array('pasto' => 'Verde', 'cielo' => 'Celeste', 'mar' => 'Azul');
+	echo 'El color que indicaremos será el siguiente:'.$color['pasto'];
+?>
+
+
+<?php
+	// Array Multidimencional Arreglos dentro de un Arreglo
+	$frutas array(
+	
+		array('Manzana','rojo','12'),
+		array('Naranja','naranjo','10'),
+		array('Pera','verde','18')
+
+		echo $frutas[0][0].' Su color es:'.$frutas[0][1].' y quedan disponibles '.$frutas[0][1];
+	)
+?>
+
+
 ~~~
 
 ## OPERADORES DE COMPARACIÓN
@@ -121,11 +143,35 @@ $x--	Post-decrementa
 ?>
 ~~~
 
+### Bucle o Loop Do While
+~~~html
+<?php
+	// Se ejecuta primero.
+	$a = 1;
+	do{
+		echo 'El número es:'.$a.'<br>';
+		$a++
+	// Luego evalúa.
+	}while($a <= 10);
+?>
+~~~
+
 ### Bucle o Loop For
 ~~~html
 <?php  
 	for ($x = 0; $x <= 10; $x++) {
-	  echo "The number is: $x <br>";
+	  echo 'El número es:'.$x.'<br>';
+	}
+?> 
+~~~
+
+### Bucle o Loop Foreach
+~~~html
+<?php 
+	//Recorre un array
+	$frutas = array('Manzana','Pera','Naranja','Frutilla'); 
+	foreach ($frutas as $valor) {
+	  echo "La fruta es:'.$frutas.'<br>';
 	}
 ?> 
 ~~~
@@ -137,30 +183,38 @@ Descargar la plantilla del siguiente enlace:
 
 [Bajar Themes themes-01-html5-Rocks](https://drive.google.com/file/d/1UXLah6ijtf2zys-NtgUpkCELisH6xth4/view?usp=sharing)
 
-### Para crear un Theme desde cero, se necesita minimo:
+### Para crear un Theme desde cero, se necesita como minimo:
 ~~~
-	-wp-content/themes/themes_lab01
+	
+	-wp-content/themes/mi_tema
 	|
 	|– index.php  
 	|– style.css
 	|– screenshot.png
 	|– function.php
+
 ~~~
 
 ### Taxonomía de un theme.
 ~~~
+
 -wp-content/themes/themes_lab02
-	|--img/
+	|
+	|--assets/
+	|    |
+	|    |
+	|    |
+	|	img/
 	|	|--img.jpg
 	|	|--img.png
 	|	|--img.gif
 	|
-	|--js/
+	|   js/
 	|	|--___.js--Archivos js que se requieren según la necesidad del proyecto
 	|	|--___.js
 	|	|--___.js
 	|
-	|--css/
+	|   css/
 	|	|--___.css--Archivos css que se requieren según la necesidad del proyecto
 	|	|--___.css
 	|	|--___.css
@@ -188,6 +242,7 @@ Descargar la plantilla del siguiente enlace:
 	|– footer.php--Contiene la información del footer de mis páginas.
 	|
 	|– footer.php--Contiene la información del footer de mis páginas.
+
 ~~~
 
 ### COMETARIOS PLANTILLAS
@@ -248,9 +303,9 @@ Descargar la plantilla del siguiente enlace:
 <?php 
  ...
     /* Siempre inserte wp_head() justo antes de cerrar el </head>
-     * wp_head(), ayuda a que complementos como plugins inserten
-     * sus estilos, jquey, script, complementos necesarios para su correcto funcionamiento.
-     * También es importante para insertar correctamente los CSS JQURY y complemnetos del Themes,
+     * wp_head(), ayuda a los complementos como plugins inserten
+     * sus estilos, jquey, script, estos son complementos necesarios para su correcto funcionamiento.
+     * También es importante para insertar correctamente los CSS, Jquery y complemnetos del Themes,
      * desde una funcion desde el archivo function.php
      */
     wp_head();
@@ -266,7 +321,7 @@ Descargar la plantilla del siguiente enlace:
     /* Siempre inserte wp_footer() justo antes de cerrar el </body>
      * wp_head(), ayuda a que complementos como plugins inserten
      * sus estilos, jquey, script, complementos necesarios para su correcto funcionamiento.
-     * También es importante para insertar correctamente los CSS JQURY y complemnetos del Themes,
+     * También es importante para insertar correctamente los CSS, Jquery y complemnetos del Themes,
      * desde una funcion desde el archivo function.php
      */
     wp_footer();
@@ -311,11 +366,11 @@ if(have_posts()){
 <?php 
 
     $argsXXXX = array(
-      'post_type'=>'xxxx',
-       'category_name'  => 'xxxx'
-       'posts_per_page' => -1,
-       'orderby'        => 'title',
-       'order'          => 'DEC',
+      'post_type'	   => 'xxxx',
+      'category_name'  => 'xxxx'
+      'posts_per_page' =>  -1,
+      'orderby'        => 'title',
+      'order'          => 'DEC'
     );
 
     $the_queryXXXX = new WP_Query($argsXXXX);
