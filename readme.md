@@ -496,5 +496,26 @@ anidadas
 ;?>
 ~~~
 
+## MODO DEBUG PARA PODER IDENTIFICAR ERRORES
+### URL DE REFERENCIA
+`https://wordpress.org/support/article/debugging-in-wordpress/`
+~~~html
+
+<?php
+
+ //Se activa en el archivo wp-config.php
+ define('WP_DEBUG', true);
+ 
+ //Activa el archivo debug.log en wp-content, este archivo contendra los errores de escritura del código.
+ define('WP_DEBUG_LOG', true);
+
+ //Oculta el mensaje de error
+ define('WP_DEBUG_DISPLAY', false);
+
+
+;?>
+
+~~~
+
 
 </section>
