@@ -391,6 +391,49 @@ if(have_posts()){
 
 ~~~
 
+## POST_TYPE DE WORDPRESS CON PAGINACION
+~~~html
+<?php 
+
+   $arg = array(
+       'post_type'     => 'slider',
+       'post_per_page' => 3,
+       'category_name' => 'slider',
+       'orderby'       => 'title',
+       'order'         => 'DEC',
+       'paged'         => $paged
+   );
+   $mi_consulta = new WP_Query($arg);
+   if ($mi_consulta->have_posts()):$mi_consulta->the_post(); {
+       while ($mi_consulta->have_posts()) {
+           // Recupera el título de la publicación
+           echo get_the_title().'<br>';
+           // Recupera el nombre de la categoría
+           // Referencia https://stackoverflow.com/questions/3037642/how-to-remove-list-from-php-the-category
+           foreach((get_the_category()) as $category) {
+               echo $category->cat_name.'<br>';
+           }
+           // Recupera la fecha de publicación
+           echo get_the_date('d \d\e F \d\e Y');
+           // Recupera el resumen de la publicación
+           echo get_the_excerpt().'<br>';
+           // Recupera el texto general de la publicación
+           echo get_the_content().'<br>';
+           // Recupera la imagen destacada primer parametro nombre de la funcion que realiza el crop de la imágen
+           // Segundo parámetro array que contiene las clases de la imagen
+           echo get_the_post_thumbnail( 'nombre_de_la_funcion_dimension_de_la_foto', array('class' => 'img-fluid')).'<br>';
+           // Recupera el permalink
+           echo get_the_permalink().'<br>';
+       }
+   endwhile;
+   echo the_pagination( $mi_consulta );
+   }else{
+       echo _e('Lo sentimos no existe Publicaciones');
+   }
+?>
+
+~~~
+
 ## LLAMADAS PARA OBTENER INFORMACIÓN GENERAL DEL SITIO
 ### URL DE REFERENCIA
 `https://developer.wordpress.org/reference/functions/bloginfo/`
